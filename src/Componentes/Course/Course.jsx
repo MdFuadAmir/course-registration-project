@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { FiDollarSign } from "react-icons/fi";
 import { FaBookOpen } from "react-icons/fa";
-const Course = ({ course }) => {
+const Course = ({ course, handleMarkAsRead, handleTotalPrice,handleTotalCradit,handleTotalRemainingHr }) => {
   const { cover_img, title, description, price, credit } = course;
   return (
     <div>
@@ -23,12 +23,26 @@ const Course = ({ course }) => {
             <p className="text-[#1C1B1B99]">Credit: {credit}hr</p>
           </div>
         </div>
-        <button className="w-full bg-[#2F80ED] p-2 text-lg font-bold text-[#fff] rounded-lg">Select</button>
+        <button
+          onClick={() => {
+            handleMarkAsRead(course);
+            handleTotalPrice(course?.price);
+            handleTotalCradit(course?.credit);
+            handleTotalRemainingHr(course?.credit)
+          }}
+          className="w-full bg-[#2F80ED] p-2 text-lg font-bold text-[#fff] rounded-lg"
+        >
+          Select
+        </button>
       </div>
     </div>
   );
 };
 Course.propTypes = {
   course: PropTypes.object.isRequired,
+  handleMarkAsRead: PropTypes.func.isRequired,
+  handleTotalPrice: PropTypes.func.isRequired,
+  handleTotalCradit: PropTypes.func.isRequired,
+  handleTotalRemainingHr: PropTypes.func.isRequired,
 };
 export default Course;
