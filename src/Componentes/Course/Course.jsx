@@ -6,7 +6,7 @@ const Course = ({ course }) => {
   return (
     <div>
       <div className="bg-[#fff] p-4 rounded-lg">
-        <img src={cover_img} alt="course cover image" />
+        <img className="w-full" src={cover_img} alt="course cover image" />
         <h2 className="text-[#1C1B1B] py-3 text-lg font-medium">{title}</h2>
         <p className="text-[#1C1B1B99]">{description}</p>
         <div className="flex justify-between mt-4 mb-6 items-center">
@@ -18,7 +18,7 @@ const Course = ({ course }) => {
           </div>
           <div className="flex items-center">
             <span className="mr-2">
-              <FaBookOpen className="w-5 h-5"></FaBookOpen>{" "}
+              <FaBookOpen className="w-5 h-5"></FaBookOpen>
             </span>
             <p className="text-[#1C1B1B99]">Credit: {credit}hr</p>
           </div>
