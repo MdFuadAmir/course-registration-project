@@ -1,7 +1,13 @@
 import PropTypes from "prop-types";
 import { FiDollarSign } from "react-icons/fi";
 import { FaBookOpen } from "react-icons/fa";
-const Course = ({ course, handleMarkAsRead, handleTotalPrice,handleTotalCradit,handleTotalRemainingHr }) => {
+const Course = ({
+  course,
+  handleMarkAsRead,
+  handleTotalPrice,
+  handleTotalCradit,
+  handleTotalRemainingHr,
+}) => {
   const { cover_img, title, description, price, credit } = course;
   return (
     <div>
@@ -28,7 +34,7 @@ const Course = ({ course, handleMarkAsRead, handleTotalPrice,handleTotalCradit,h
             handleMarkAsRead(course);
             handleTotalPrice(course?.price);
             handleTotalCradit(course?.credit);
-            handleTotalRemainingHr(course?.credit)
+            handleTotalRemainingHr(course?.credit);
           }}
           className="w-full bg-[#2F80ED] p-2 text-lg font-bold text-[#fff] rounded-lg"
         >
